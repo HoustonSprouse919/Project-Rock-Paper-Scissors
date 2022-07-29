@@ -52,6 +52,7 @@ function getComputerChoice(){
     let comScore = 0;
     for (let i = 0; i < 5; i++) {
       result = playRound(playerChoice(), getComputerChoice());
+      console.log(result);
       if(result === "You win!"){
        playerScore++
       }
