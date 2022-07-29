@@ -51,7 +51,7 @@ function getComputerChoice(){
     let playerScore = 0;
     let comScore = 0;
     for (let i = 0; i < 5; i++) {
-      result = playRound(playerSelection, computerSelection);
+      result = playRound(playerChoice(), getComputerChoice());
       if(result === "You win!"){
        playerScore++
       }
@@ -59,6 +59,8 @@ function getComputerChoice(){
       comScore++;
       }
       else{
+        playerScore++
+        comScore++
       }
     }
 
@@ -72,9 +74,13 @@ function getComputerChoice(){
       return("You tied");
     }
   }
-
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
+  function playerChoice(){
+    let choice = prompt("Are you playing rock, paper, or scissors");
+    if (choice ===null){
+      playerChoice();
+    }
+    return choice
+  }
 console.log(game());
 </script>
 </html>
