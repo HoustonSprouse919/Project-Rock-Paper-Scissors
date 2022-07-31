@@ -6,7 +6,11 @@
     <title>Rock Paper Scissors</title>
   </head>
 
-  <body></body>
+  <body>
+    <button id ="rock">Rock</button>
+    <button id ="paper">Paper</button>
+    <button id ="scissors">Scissors</button>
+  </body>
 
   <script>
     function getComputerChoice() {
@@ -42,7 +46,7 @@
     function game() {
       let playerScore = 0;
       let comScore = 0;
-      for (let i = 0; i < 5; i++) {
+      //for (let i = 0; i < 5; i++) {
         result = playRound(playerChoice(), getComputerChoice());
         console.log(result);
         if (result === "You win!") {
@@ -60,7 +64,7 @@
       } else if (playerScore === comScore) {
         return "You tied";
       }
-    }
+    //}
     function playerChoice() {
       let choice = prompt("Are you playing rock, paper, or scissors");
       if (choice === null) {
