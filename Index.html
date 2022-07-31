@@ -21,6 +21,9 @@ function rockFunction() {
   playerChoice = "rock"
   console.log(game());
 }
+let playerScore = 0;
+let comScore = 0;
+let gameResult ="";
 
     function getComputerChoice() {
       decision = Math.floor(Math.random() * 3); //random number between 1 and 3 is chosen which corresponds to choices
@@ -53,9 +56,7 @@ function rockFunction() {
       }
     }
     function game() {
-      let playerScore = 0;
-      let comScore = 0;
-      for (let i = 0; i < 5; i++) {
+      //for (let i = 0; i < 5; i++) {
         result = playRound(playerChoice, getComputerChoice());
         console.log(result);
         if (result === "You win!") {
@@ -64,16 +65,22 @@ function rockFunction() {
           comScore++;
         } else {
         }
-      }
-
+     // }
+     if(playerScore + comScore == 5){
       if (playerScore > comScore) {
-        return "You won " + playerScore + " : " + comScore;
+        gameResult = "You won " + playerScore + " : " + comScore;
       } else if (playerScore < comScore) {
-        return "You lost " + playerScore + " : " + comScore;
+        gameResult = "You lost " + playerScore + " : " + comScore;
       } else if (playerScore === comScore) {
-        return "You tied";
+        gameResult = "You tied";
       }
+      playerScore = 0;
+      comScore =0;
+      return gameResult;
+    } else{
+      return "The current score is " + playerScore + " : " + comScore; 
     }
+  }
     //function playerChoice() {
       //let choice = prompt("Are you playing rock, paper, or scissors");
       //if (choice === null) {
