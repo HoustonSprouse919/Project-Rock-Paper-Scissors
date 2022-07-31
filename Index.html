@@ -21,6 +21,20 @@ function rockFunction() {
   playerChoice = "rock"
   console.log(game());
 }
+const element2 = document.getElementById("paper");
+element2.addEventListener("click", paperFunction);
+
+function paperFunction() {
+  playerChoice = "paper"
+  console.log(game());
+}
+const element3 = document.getElementById("scissors");
+element3.addEventListener("click", scissorsFunction);
+
+function scissorsFunction() {
+  playerChoice = "scissors"
+  console.log(game());
+}
 let playerScore = 0;
 let comScore = 0;
 let gameResult ="";
