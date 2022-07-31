@@ -1,0 +1,17 @@
+body{
+    display:block;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+.buttons{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+button{
+    height: 100px;
+    width: 200px;
+
+}
