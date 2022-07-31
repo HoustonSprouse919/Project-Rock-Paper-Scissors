@@ -13,6 +13,15 @@
   </body>
 
   <script>
+   let playerChoice = ""
+const element1 = document.getElementById("rock");
+element1.addEventListener("click", rockFunction);
+
+function rockFunction() {
+  playerChoice = "rock"
+  console.log(game());
+}
+
     function getComputerChoice() {
       decision = Math.floor(Math.random() * 3); //random number between 1 and 3 is chosen which corresponds to choices
       if (decision === 1) {
@@ -46,8 +55,8 @@
     function game() {
       let playerScore = 0;
       let comScore = 0;
-      //for (let i = 0; i < 5; i++) {
-        result = playRound(playerChoice(), getComputerChoice());
+      for (let i = 0; i < 5; i++) {
+        result = playRound(playerChoice, getComputerChoice());
         console.log(result);
         if (result === "You win!") {
           playerScore++;
@@ -64,14 +73,16 @@
       } else if (playerScore === comScore) {
         return "You tied";
       }
-    //}
-    function playerChoice() {
-      let choice = prompt("Are you playing rock, paper, or scissors");
-      if (choice === null) {
-        playerChoice();
-      }
-      return choice;
     }
-    console.log(game());
+    //function playerChoice() {
+      //let choice = prompt("Are you playing rock, paper, or scissors");
+      //if (choice === null) {
+      //  playerChoice();
+      //}
+     // return choice;
+    //}
+
+
+
   </script>
 </html>
