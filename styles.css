@@ -1,16 +1,17 @@
 body{
     display:block;
+    background-color: rgb(255, 255, 255);
 }
 h1{
     display: flex;
     justify-content: center;
 }
 .buttons{
-    background-color: aqua;
     display: flex;
     justify-content: center;
 }
 button{
+    border-radius: 5px;;
     height: 100px;
     width: 200px;
 
