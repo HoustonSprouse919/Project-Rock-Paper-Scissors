@@ -8,25 +8,29 @@
   </head>
 
   <body>
+    <div id = "title">
     <h1>CHOOSE YOUR FIGHTER</h1>
+  </div>
     <div class = "buttons">
       <button id ="rock">Rock</button>
       <button id ="paper">Paper</button>
       <button id ="scissors">Scissors</button>
   </div>
-    <div id = "Results">
+  <h2>Match results!<h2>
+    <div id = "matchResults">
+
+    </div>
+    <div id = "gameResults">
 
     </div>
     <div id = "CurrentScore">
 
     </div>
-    <div id = "matchResults">
-
-    </div>
   </body>
 
   <script>
-   let playerChoice = ""
+    let result = "";
+   let playerChoice = "";
 const element1 = document.getElementById("rock");
 element1.addEventListener("click", rockFunction);
 
@@ -86,6 +90,12 @@ let gameResult ="";
       //for (let i = 0; i < 5; i++) {
         result = playRound(playerChoice, getComputerChoice());
         console.log(result);
+        const container = document.querySelector('#matchResults');
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = result;
+
+container.appendChild(content);
         if (result === "You win!") {
           playerScore++;
         } else if (result === "You lose!") {
@@ -117,6 +127,6 @@ let gameResult ="";
     //}
 
 
-
+container.appendChild(content);
   </script>
 </html>
