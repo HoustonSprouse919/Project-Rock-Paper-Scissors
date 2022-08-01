@@ -74,10 +74,25 @@ let gameResult ="";
      if(playerScore + comScore == 5){
       if (playerScore > comScore) {
         gameResult = "You won " + playerScore + " : " + comScore;
+        const container = document.querySelector('#gameResults');
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = gameResult;
+        container.appendChild(content);
       } else if (playerScore < comScore) {
         gameResult = "You lost " + playerScore + " : " + comScore;
+        const container = document.querySelector('#gameResults');
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = gameResult;
+        container.appendChild(content);
       } else if (playerScore === comScore) {
         gameResult = "You tied";
+        const container = document.querySelector('#gameResults');
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = gameResult;
+        container.appendChild(content);
       }
       playerScore = 0;
       comScore =0;
